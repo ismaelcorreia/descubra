@@ -1,0 +1,1 @@
+from .static import SECRET_KEY, DB_URL

@@ -1,0 +1,308 @@
+@import "./variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// INDEX
+
+/* >HERO */
+.hero{
+
+    background: url("/cidades/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 20px;
+    border-radius: 20px;
+    min-height: 570px;
+    filter: opacity (30%);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor: pointer;
+    
+    .caption{
+        bottom: 0;
+        left: 0;
+        padding: 50px;
+        padding-bottom: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        transition: $transition-default;
+        background: linear-gradient(
+            to top,
+            $color-secondary,
+            transparent
+
+        );
+
+        .title>.place{
+            color: $color-white;
+            text-decoration: underline;
+        }
+        .description{
+            color: $color-white;
+            max-width: 500px;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: transform 1s, opacity .8s;
+
+        }
+
+    }
+    &:hover{
+        .caption{
+            padding-bottom: 50px;
+            background: linear-gradient(
+                to top,
+                #292c27fb 10%,
+                #292c2779,
+                transparent
+    
+            );
+            .title{
+                color: $color-main-100;
+                font-size: 14px;
+            }
+
+        .description{
+            opacity: 1;
+            display: inline;
+            transform: scale(1);
+            opacity: 1;
+            font-family: "Poppins";
+
+        }
+
+        }
+    }
+}
+ 
+
+
+/* >RESERVATION */
+.reservation{
+    width: 100%;
+    .title{
+        margin: 30px;
+    }
+  
+
+    .categories{
+        display: flex;
+        width: 100%;
+        margin: 0;
+        padding-inline: 70px;
+        padding-block: 10px;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: hidden;
+        &::before,&::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 55px;
+        }
+        &::before{
+            left: 0;
+            background: linear-gradient(
+                to right,
+                $color-white,
+                transparent
+            );
+
+        }
+        &::after{
+            right: 0;
+            
+            background: linear-gradient(
+                to left,
+                $color-white,
+                transparent
+            );
+
+        }
+    }
+
+    .reservation-container{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        padding: 20px;
+        width: 100%;
+        gap: 100px;
+
+
+
+    @media screen and (max-width: 966px) {
+        flex-direction: column;
+        >*{
+            width: 100%;
+        }
+        .reserve{
+            margin-top: 20px;
+        }
+      }
+        .place{
+            flex-grow: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            height: 100%;
+            .commodities{
+                position: relative;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                max-width: 7200px;
+                max-height: 70px;
+                overflow-y: scroll;
+                margin: 10px;
+                padding: 20px;
+                border-radius: 20px;
+            }
+
+            .title{
+                margin: 0;
+                padding: 0;
+                &.subtitle{
+                    color: $color-secondary;
+                    font-weight: 400;
+                    margin: 0;
+                    padding: 0;
+                }
+                &.price{
+                    margin-block: 20px;
+                    color: $color-secondary;
+                    font-weight: 600;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+
+            .description{
+                color: $color-secondary;
+                font-size: 12px;
+                font-weight: 300;
+                padding-inline: 10px;
+            }
+            .place-card{
+                min-width: 370px;
+                width: 100%;
+                min-height: 500px;
+                max-height: 1200px;
+                height: 100%;
+                border-radius: 20px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+
+            }
+        }
+        .reserve{
+            flex-grow: 1;
+            height: 100%;
+            .card{
+                border-radius: 20px;
+                background: #e4e4e4;
+                box-shadow: 0 0 6px 3px #f0f0f0;
+                height: 100%;
+                overflow: hidden;
+                display: block;
+
+                .card-row{
+                    padding: 20px;
+                    background: #ffffff;
+                    display: flex;
+                    align-items: center;
+                    &.card-invert{
+                        background: #f1f1f1;
+                        input[type='text']{
+                            background: #f1f1f1;
+                        }
+
+                    }
+                    &.card-input{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+                        gap: 10px;
+                    }
+
+                    h4{
+                        font-size: 14px;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        min-width: 170px;
+                    }
+
+                    button.primary-button{
+                        padding: 10px;
+                        padding-inline: 20px;
+                        border-radius: 30px;
+                        gap:10px;
+                        background: $color-main;
+                        color: $color-white;
+                        text-align: center;
+                        font-weight: 700;
+                    }
+
+                }
+            }
+
+        }
+
+    }
+
+}
+
+
+
+.category{
+    padding-block: 5px;
+    padding-inline: 20px;
+    padding-right: 30px;
+    display: flex;
+    gap: 20px;
+    border-radius: 30px;
+    background: #f0f0f0;
+    transition: $transition-default;
+    cursor: pointer;
+    border: 2px solid transparent;
+    img, label{
+        cursor: pointer;
+        transition: $transition-default;
+
+    }
+
+    &:hover {
+        background: $color-main;
+        color: #f0f0f0;
+        img{
+            filter: invert(100%);
+        }
+    }
+    &:active{
+        border-color: $color-main;
+        background: #f0f0f0;
+        color: $color-secondary;
+        img{
+            filter: invert(0);
+        }
+        
+
+    }
+}
+
+
+
+
+
