@@ -14,7 +14,7 @@ app = Flask(__name__, static_url_path='/static')
 CORS(app)
 app.config.from_object(config[os.getenv('CONFIG_MODE')])
 db.init_app(app)
-    
+
 
 PORT = os.getenv('BD')
 

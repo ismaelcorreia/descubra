@@ -21,8 +21,8 @@ python-engineio==4.9.0
 python-socketio==5.11.2
 
 # ------ PostgresSQL dependencies ----------
-# psycopg2-binary
-# psycopg2
+psycopg2-binary
+psycopg2
 # ------ END PostgresSQL dependencies ------
 
 simple-websocket==1.0.0
