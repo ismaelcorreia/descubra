@@ -4,6 +4,9 @@ venv:
 activate:
 	turismovenv\Scripts\activate
 
+activate-ub:
+	turismovenv\bin\activate
+
 install:
 	pip install -r requirements.txt
 
