@@ -8,7 +8,13 @@
 // import "@/style/main.scss"
 // import { useBearStore } from '@store';
 
+import "primereact/resources/themes/saga-green/theme.css";
+import 'primeicons/primeicons.css';
+import "../globals.css"; 
+import "@/style/main.scss"
+import '@/style/components.scss';
 
+import Menu from '@/components/admin/Menu'
 
 export default function AdminLayout({
   children
@@ -20,7 +26,7 @@ export default function AdminLayout({
     
     <>
     
-    <div>Hello</div>
+    <Menu/>
         <main>{children}</main>
     </>
   );
